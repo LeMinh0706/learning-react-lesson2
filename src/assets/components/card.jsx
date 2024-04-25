@@ -33,18 +33,22 @@ function Card() {
                 <p className="text-white text-sm">University: Hutech</p>
                 <p className="text-white text-sm">Age: {age}</p>
             </div>
-            <div className="flex gap-4 items-center w-full">
+            <div className="flex gap-3 items-center w-full">
                 <label className="font-medium">Name: </label>
-                <input className="p-1 border-2 border-black rounded-lg bg-slate-300 font-normal" value={name} onChange={handleNameChange} />
+                <input className="p-3 border-2 border-black rounded-lg bg-slate-200 font-normal" value={name} onChange={handleNameChange} />
             </div>
-            <div className="flex gap-8 items-center w-full">
+            <div className="flex gap-6 items-center w-full">
                 <label className="font-medium">Age: </label>
-                <input className="p-1 border-2 border-black rounded-lg bg-slate-300 font-normal" value={age} onChange={handleAgeChange} />
+                <input className="p-3 border-2 border-black rounded-lg bg-slate-200 font-normal" value={age} onChange={handleAgeChange} />
             </div>
-
-            <input className="w-full" type="color" value={color} onChange={handleColorChange} />
-            <p>Color: {color}</p>
-        </div>
+            <div className="flex w-full items-center gap-3">
+                <p className="font-medium">Color: </p>
+                <div className="flex items-center justify-center w-full h-24 bg-local relative" style={{ backgroundColor: color }} >
+                    <p className="absolute font-medium font-sans text-xl text-white">{color}</p>
+                    <input className="bg-transparent border-none w-full h-full" type="color" value={color} onChange={handleColorChange} />
+                </div>
+            </div>
+        </div >
     );
 
 }
